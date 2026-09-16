@@ -6,6 +6,8 @@
   --text: #fff;
   --muted: #c4ddff;
   --gold: #f4d27a;
+  --display: "Bebas Neue", Impact, sans-serif;
+  --body: Manrope, Arial, Helvetica, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -19,7 +21,7 @@ body {
   background: var(--navy);
   color: var(--text);
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--body);
   overflow-x: hidden;
 }
 
@@ -95,11 +97,12 @@ main:before {
 
 .brand,
 .footerBrand {
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
-  font-weight: 800;
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 400;
   display: flex;
 }
 
@@ -116,6 +119,8 @@ main:before {
   align-items: center;
 }
 
+.xShort { display: none; }
+
 .xLink,
 .tgLink {
   color: #fff;
@@ -124,6 +129,8 @@ main:before {
   border-radius: 99px;
   padding: 11px 16px;
   font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
   transition: all 0.25s;
   box-shadow: inset 0 1px #ffffff1f;
 }
@@ -163,11 +170,13 @@ main:before {
 }
 
 .heroCopy,
-.heroShot { z-index: 1; position: relative; }
+.heroShot { z-index: 1; position: relative; min-width: 0; }
 
 .heroCopy h1 {
   margin: 18px 0 16px;
-  font-size: clamp(44px, 5.6vw, 80px);
+  font-family: var(--display);
+  font-size: clamp(52px, 6.4vw, 96px);
+  font-weight: 400;
 }
 
 .stretchLine {
@@ -177,8 +186,8 @@ main:before {
   background: linear-gradient(90deg, #fff 10%, #7ad7ff 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 0.42em;
-  font-weight: 800;
+  font-size: 0.5em;
+  font-weight: 400;
   line-height: 1.15;
   margin-bottom: 6px;
   animation: stretch 4.8s ease-in-out infinite;
@@ -320,8 +329,13 @@ main:before {
   box-shadow: 0 0 14px #fff;
 }
 
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 400;
+}
+
 h1 {
-  letter-spacing: -0.07em;
+  letter-spacing: 0.02em;
   color: #0000;
   filter: drop-shadow(0 8px 22px #01267b38);
   background: linear-gradient(#fff 28%, #c4e9ff 105%);
@@ -329,18 +343,17 @@ h1 {
   background-clip: text;
   margin: 24px 0 19px;
   font-size: clamp(40px, 8vw, 118px);
-  font-weight: 900;
   line-height: 0.9;
   max-width: 100%;
 }
 
 .tagline {
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   margin: 0;
-  max-width: 18ch;
+  max-width: 22ch;
   font-size: clamp(22px, 3.2vw, 34px);
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .intro {
@@ -438,6 +451,9 @@ h1 {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 11px;
   overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  white-space: nowrap;
 }
 
 .copyState {
@@ -571,11 +587,11 @@ h1 {
 
 .statHero > strong {
   color: #dcedff;
-  letter-spacing: -0.08em;
+  letter-spacing: 0.04em;
   text-shadow: 0 0 9px #4da0ff, 0 0 28px #3077ffcc;
   margin: 10px 0 2px;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: clamp(42px, 5vw, 64px);
+  font-family: var(--display);
+  font-size: clamp(52px, 6vw, 76px);
   font-weight: 400;
   line-height: 0.92;
 }
@@ -670,9 +686,9 @@ h1 {
 
 .partner img {
   display: block;
-  height: 32px;
+  height: 28px;
   width: auto;
-  max-width: 156px;
+  max-width: min(140px, 100%);
   object-fit: contain;
   filter: drop-shadow(0 10px 18px #00238555);
 }
@@ -699,10 +715,10 @@ h1 {
 }
 
 h2 {
-  letter-spacing: -0.05em;
+  letter-spacing: 0.02em;
   margin: 0;
   font-size: clamp(36px, 5vw, 62px);
-  line-height: 1;
+  line-height: 0.95;
 }
 
 .sectionHeading > p {
@@ -831,67 +847,89 @@ h2 {
 @media (width <= 860px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 22px;
     min-height: 0;
-    padding: 32px 0 64px;
+    padding: 20px 0 48px;
   }
+  .heroGhost,
+  .shotGlow,
+  .shotOrbit { display: none; }
   .heroShot { order: -1; }
   .shotFrame { transform: none; animation: none; }
   .shotFrame img.mascot { height: auto; }
-  .shotChip { top: 14px; bottom: auto; }
-  .shotOrbit { width: 88px; height: 88px; top: -16px; right: -8px; }
-  .heroCopy h1 { font-size: clamp(42px, 12vw, 72px); }
-  .stretchLine { letter-spacing: 0.28em; }
+  .shotChip { top: 12px; bottom: auto; }
+  .heroCopy h1 { font-size: clamp(48px, 14vw, 72px); }
+  .stretchLine {
+    letter-spacing: 0.22em;
+    animation: none;
+  }
+  .tagline { max-width: 100%; }
   .thesisCard {
     grid-template-columns: 1fr;
-    gap: 48px;
-    padding: 48px 38px;
+    gap: 32px;
+    padding: 36px 28px;
   }
   .thesisStats {
     border-top: 1px solid #8da9e833;
     border-left: 0;
     min-height: 0;
-    padding: 42px 0 0;
+    padding: 28px 0 0;
   }
-  .partnerRow { justify-content: center; }
-  .partner { flex: 1 1 42%; }
+  .partnerRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 24px;
+  }
+  .partner { flex: none; min-width: 0; }
   .loreGrid,
   .steps { grid-template-columns: 1fr; }
 }
 
 @media (width <= 760px) {
-  .shell { width: min(100% - 28px, 1180px); }
-  .nav { height: 72px; }
+  .shell { width: min(100% - 24px, 1180px); }
+  .nav { height: 64px; gap: 10px; }
   .brand span { display: none; }
-  .hero { padding: 28px 0 56px; }
-  .heroGhost { font-size: 64px; top: 2%; left: -10%; }
-  .shotFrame { border-radius: 22px; }
-  .shotFrame img.mascot { height: auto; }
-  .shotChip { left: 12px; bottom: 12px; font-size: 9px; }
-  .intro { font-size: 14px; }
+  .xLong { display: none; }
+  .xShort { display: inline; }
+  .xLink { padding: 8px 12px; font-size: 12px; }
+  .hero { padding: 16px 0 40px; }
+  .shotFrame { border-radius: 20px; }
+  .shotChip { left: 10px; font-size: 9px; padding: 7px 10px; }
+  .intro,
+  .thesisCopy .intro,
+  .loreCard p,
+  .sectionHeading > p {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
   .actions { flex-direction: column; width: 100%; }
   .primaryButton,
   .secondaryButton { width: 100%; }
-  .contract { justify-content: space-between; width: 100%; }
-  .contractText { max-width: 210px; }
-  .thesisSection { padding: 0 0 80px; }
+  .contract { width: 100%; }
+  .contractText { max-width: none; }
+  .thesisSection { padding: 0 0 56px; }
   .thesisCard,
-  .buyCard { border-radius: 22px; padding: 34px 24px; }
-  h1 { font-size: clamp(34px, 11vw, 56px); }
+  .buyCard { border-radius: 20px; padding: 28px 18px; }
+  h1, .heroCopy h1 { font-size: clamp(44px, 16vw, 64px); }
+  h2 { font-size: clamp(34px, 12vw, 48px); }
   .statHero { align-items: flex-start; }
-  .statHero > strong { font-size: 48px; }
+  .statHero > strong { font-size: 56px; }
   .statDetails {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: left;
-    gap: 18px;
+    justify-content: start;
+    gap: 16px;
   }
   .statDetails strong { font-size: 20px; }
-  .lore { padding: 80px 0; }
-  .sectionHeading { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .lore { padding: 56px 0 64px; }
+  .sectionHeading { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .partners { padding: 28px 0 12px; }
+  .partner img { height: 24px; max-width: 100%; }
   .footer {
     text-align: center;
     flex-direction: column;
-    padding: 32px 0;
+    padding: 28px 0;
   }
 }
