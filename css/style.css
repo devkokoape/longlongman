@@ -94,7 +94,9 @@ main:before {
   justify-content: space-between;
   align-items: center;
   height: 88px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
 }
 
 .brand,
@@ -102,10 +104,17 @@ main:before {
   letter-spacing: 0.12em;
   align-items: center;
   gap: 12px;
+  min-width: 0;
   font-family: var(--display);
   font-size: 22px;
   font-weight: 400;
   display: flex;
+}
+
+.brand span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .brand img,
@@ -122,26 +131,27 @@ main:before {
   margin-left: auto;
 }
 
-.xShort { display: none; }
-
 .xLink,
 .tgLink {
-  color: #fff;
-  border: 1px solid var(--line);
-  background: #0031972e;
+  color: #06318d;
+  border: 1px solid #fff;
+  background: #fff;
   border-radius: 99px;
-  padding: 11px 16px;
+  padding: 10px 16px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   white-space: nowrap;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.25s;
-  box-shadow: inset 0 1px #ffffff1f;
+  box-shadow: 0 10px 24px #00247947;
 }
 
 .xLink:hover,
 .tgLink:hover {
-  background: #45b7ff47;
-  border-color: #b6e5ff;
+  background: #e8f6ff;
   transform: translateY(-2px);
 }
 
@@ -558,11 +568,24 @@ h1 {
   color: #b9c9ea;
   letter-spacing: 0.04em;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-top: 28px;
   font-size: 12px;
   font-weight: 700;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.taxChip {
+  color: #eaf6ff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid #d3f0ff57;
+  background: #032a896b;
+  border-radius: 99px;
+  padding: 7px 10px;
+  font-size: 10px;
+  font-weight: 800;
 }
 
 .statusDot {
@@ -898,27 +921,28 @@ h2 {
 
 @media (width <= 760px) {
   .shell { width: min(100% - 24px, 1180px); }
-  .nav { height: 64px; gap: 10px; width: 100%; }
+  .nav {
+    height: 60px;
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #064fcce8;
+    backdrop-filter: blur(18px);
+  }
+  .brand { gap: 8px; }
+  .brand img { width: 28px; height: 28px; }
   .brand span { display: inline; font-size: 18px; }
-  .xLong { display: none; }
-  .xShort { display: inline; }
   .xLink {
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
-    font-weight: 800;
-    color: #06318d;
-    background: #fff;
-    flex-shrink: 0;
+    height: 34px;
+    padding: 0 14px;
+    font-size: 12px;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px #00247947;
   }
-  .xLink span:last-child { display: none; }
   .copyState { display: none; }
-  .nav { max-width: 100%; }
   .heroCopy,
   .tagline,
   .intro,
@@ -944,22 +968,30 @@ h2 {
   .primaryButton,
   .secondaryButton { width: 100%; }
   .contract { width: 100%; }
-  .contractText { max-width: none; }
   .thesisSection { padding: 0 0 56px; }
   .thesisCard,
-  .buyCard { border-radius: 20px; padding: 28px 18px; }
+  .buyCard { border-radius: 20px; padding: 24px 16px; min-height: 0; }
+  .thesisCopy h2 { font-size: clamp(40px, 12vw, 52px); }
   h1, .heroCopy h1 { font-size: clamp(44px, 16vw, 64px); }
   h2 { font-size: clamp(34px, 12vw, 48px); }
+  .thesisStats {
+    border: 1px solid #c7e7ff33;
+    background: #021a5c73;
+    border-radius: 18px;
+    padding: 18px 16px 16px;
+    min-height: 0;
+  }
   .statHero { align-items: flex-start; }
-  .statHero > strong { font-size: 56px; }
+  .statHero > strong { font-size: 48px; margin: 4px 0 2px; }
   .statDetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
     justify-content: start;
-    gap: 16px;
+    gap: 14px 12px;
   }
-  .statDetails strong { font-size: 20px; }
+  .statDetails strong { font-size: 18px; }
+  .statusRow { margin-top: 18px; }
   .lore { padding: 56px 0 64px; }
   .sectionHeading { flex-direction: column; align-items: flex-start; gap: 14px; }
   .partners { padding: 28px 0 12px; }

@@ -43,7 +43,7 @@
       a.target = "_blank";
       a.rel = "noopener noreferrer";
       a.classList.remove("hidden");
-    } else {
+    } else if (!a.classList.contains("xLink")) {
       a.classList.add("hidden");
     }
   });
