@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Airdrop — Long Long Man</title>
+    <meta name="description" content="Connect wallet, connect X, like and retweet. Stretch for $LLM." />
+    <link rel="icon" href="../assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/airdrop.css" />
+  </head>
+  <body>
+    <main>
+      <div class="ambient a1"></div>
+      <div class="ambient a2"></div>
+
+      <header class="nav">
+        <div class="navInner">
+          <a class="brand" href="../index.html">
+            <img src="../assets/icon.png" alt="" />
+            <span class="brandFull">LONG LONG MAN</span>
+            <span class="brandShort">LLM</span>
+          </a>
+          <div class="navRight">
+            <span class="walletChip" id="walletChip" hidden></span>
+            <button type="button" class="navBtn" id="connectBtn"><span class="btnFull">Connect wallet</span><span class="btnShort">Connect</span></button>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <p class="eyebrow"><span></span> Genesis airdrop · Arc</p>
+        <h1>
+          <span class="stretch">STRETCH</span>
+          FOR $LLM
+        </h1>
+        <p class="lede">
+          Connect MetaMask. Link X. Like and retweet. That’s the whole form.
+        </p>
+        <div class="heroStats">
+          <div>
+            <strong id="pointsValue">0</strong>
+            <span>POINTS</span>
+          </div>
+          <div>
+            <strong id="taskCount">0/2</strong>
+            <span>TASKS</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="board" id="board">
+        <article class="gate card" id="gateCard">
+          <p class="stepNum">00</p>
+          <h2>Connect MetaMask to log in.</h2>
+          <p class="muted">We’ll add Arc if it isn’t in your wallet. USDC pays the gas.</p>
+          <button type="button" class="primary" id="gateBtn">Connect MetaMask</button>
+          <p class="hint" id="gateHint"></p>
+        </article>
+
+        <div class="tasks" id="tasks" hidden>
+          <article class="card task" data-task="x" id="taskX">
+            <div class="taskHead">
+              <p class="stepNum">01</p>
+              <span class="pts">+100</span>
+            </div>
+            <h2>Connect your X. Make your move.</h2>
+            <p class="muted">No bots. Just you and your X account.</p>
+            <div class="taskActions">
+              <button type="button" class="primary" id="xConnectBtn">Connect X</button>
+            </div>
+            <form class="xForm" id="xForm" hidden>
+              <label for="xHandle">Your X handle</label>
+              <div class="xRow">
+                <span>@</span>
+                <input id="xHandle" name="xHandle" autocomplete="off" placeholder="LLMonARC" />
+                <button type="submit" class="primary">Confirm</button>
+              </div>
+            </form>
+            <p class="doneLine" hidden>Connected as <strong id="xDoneHandle"></strong></p>
+          </article>
+
+          <article class="card task locked" data-task="engage" id="taskEngage">
+            <div class="taskHead">
+              <p class="stepNum">02</p>
+              <span class="pts">+200</span>
+            </div>
+            <h2>Like and retweet. Make it official.</h2>
+            <p class="muted">Unlocks after X is connected. Open the post, like it, retweet it, then mark done.</p>
+            <div class="taskActions">
+              <a class="ghost" id="likeBtn" href="#" target="_blank" rel="noopener">Like ↗</a>
+              <a class="ghost" id="rtBtn" href="#" target="_blank" rel="noopener">Retweet ↗</a>
+              <button type="button" class="primary" id="engageDoneBtn" disabled>Mark complete</button>
+            </div>
+          </article>
+
+          <article class="card finish" id="finishCard" hidden>
+            <p class="stepNum">DONE</p>
+            <h2>You’re on the list.</h2>
+            <p class="muted">Wallet linked. X linked. Like + retweet logged. Hold $LLM. Make it long, long together.</p>
+            <a class="primary" href="../index.html">Back to $LLM</a>
+          </article>
+        </div>
+      </section>
+
+      <footer class="foot">
+        <a href="../index.html">longlongman.xyz</a>
+        <span>Community airdrop. Not financial advice.</span>
+      </footer>
+    </main>
+    <script src="./js/config.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

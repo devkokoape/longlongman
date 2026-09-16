@@ -1,0 +1,253 @@
+:root {
+  --navy: #064fcb;
+  --line: #bfe1ff57;
+  --text: #fff;
+  --muted: #c4ddff;
+  --display: "Bebas Neue", Impact, sans-serif;
+  --body: Manrope, Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: var(--navy);
+  color: var(--text);
+  font-family: var(--body);
+}
+
+button, input { font: inherit; }
+
+main {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  background-image:
+    linear-gradient(#98daff21 1px, #0000 1px),
+    linear-gradient(90deg, #98daff1a 1px, #0000 1px),
+    radial-gradient(circle at 50% 0%, #118dff 0, #086edf 32%, #0000 62%);
+  background-size: 92px 92px, 92px 92px, 100% 100%;
+}
+
+.ambient {
+  position: absolute;
+  z-index: -1;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.a1 { width: 420px; height: 420px; background: #39baff; top: 40px; left: 50%; margin-left: -210px; }
+.a2 { width: 280px; height: 280px; background: #ff8fab; bottom: 80px; right: -80px; }
+
+.nav { width: 100%; border-bottom: 1px solid var(--line); }
+.navInner {
+  width: min(880px, calc(100% - 32px));
+  height: 64px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+}
+.brand img { width: 28px; height: 28px; object-fit: contain; }
+.brandShort, .btnShort { display: none; }
+.navRight { display: flex; align-items: center; gap: 10px; }
+.walletChip {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.navBtn, .primary, .ghost {
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 14px;
+  font-weight: 800;
+  font-size: 13px;
+}
+.navBtn, .primary {
+  color: #06318d;
+  background: #fff;
+}
+.navBtn:hover, .primary:hover { background: #e8f6ff; }
+.ghost {
+  color: #fff;
+  background: #00309838;
+  border: 1px solid var(--line);
+}
+.ghost:hover { background: #4bbbff3d; }
+.ghost.doneish { border-color: #9ee0ff; color: #9ee0ff; }
+button:disabled, .primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.hero {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 28px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 800;
+  color: #d9eeff;
+}
+.eyebrow span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #bdeaff;
+  box-shadow: 0 0 12px #fff;
+}
+h1, h2 { font-family: var(--display); font-weight: 400; margin: 0; }
+h1 {
+  margin: 16px 0 12px;
+  font-size: clamp(52px, 12vw, 96px);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  background: linear-gradient(#fff 28%, #c4e9ff 105%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #0000;
+}
+.stretch {
+  display: block;
+  font-size: 0.46em;
+  letter-spacing: 0.28em;
+  color: #9ee0ff;
+  -webkit-text-fill-color: #9ee0ff;
+}
+.lede { max-width: 46ch; color: var(--muted); line-height: 1.6; margin: 0; }
+.heroStats {
+  display: flex;
+  gap: 28px;
+  margin-top: 28px;
+}
+.heroStats strong {
+  display: block;
+  font-family: var(--display);
+  font-size: 42px;
+  line-height: 1;
+}
+.heroStats span {
+  letter-spacing: 0.16em;
+  font-size: 10px;
+  font-weight: 800;
+  color: #afd7ff;
+}
+
+.board {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 10px 0 80px;
+}
+.card {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(145deg, #0843b5b8, #042889d6);
+  border: 1px solid #c7e7ff57;
+  border-radius: 22px;
+  padding: 28px;
+  margin-bottom: 12px;
+  box-shadow: inset 0 1px #ffffff17;
+}
+.stepNum {
+  margin: 0 0 12px;
+  color: #63c8ff;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  font-weight: 800;
+}
+.card h2 { font-size: clamp(28px, 6vw, 40px); line-height: 1; margin-bottom: 10px; }
+.muted { color: var(--muted); line-height: 1.55; margin: 0 0 20px; font-size: 15px; }
+.hint { min-height: 1.2em; margin: 12px 0 0; color: #ffd3e0; font-size: 13px; }
+.taskHead { display: flex; justify-content: space-between; align-items: center; }
+.pts {
+  color: #9ee0ff;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 800;
+}
+.taskActions { display: flex; flex-wrap: wrap; gap: 10px; }
+.task.locked { opacity: 0.48; pointer-events: none; }
+.task.done { border-color: #9ee0ff99; }
+.task.done .stepNum { color: #9ee0ff; }
+.xForm { margin-top: 8px; }
+.xForm label { display: block; font-size: 12px; font-weight: 700; margin-bottom: 8px; color: #afd7ff; }
+.xRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 6px 6px 6px 12px;
+  background: #021a5c73;
+}
+.xRow span { color: #9ee0ff; font-weight: 800; }
+.xRow input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  padding: 8px 0;
+}
+.doneLine { margin: 14px 0 0; color: #9ee0ff; font-size: 14px; }
+.finish .primary { margin-top: 4px; }
+
+.foot {
+  width: min(880px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 0 0 36px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #afcdf0;
+  font-size: 12px;
+}
+.foot a { color: #e0f4ff; }
+
+[hidden] { display: none !important; }
+
+@media (width <= 760px) {
+  .brandFull, .btnFull { display: none; }
+  .brandShort, .btnShort { display: inline; }
+  .hero { padding-top: 28px; }
+  .heroStats { gap: 18px; }
+  .card { padding: 20px 16px; }
+  .taskActions { flex-direction: column; }
+  .taskActions .primary, .taskActions .ghost { width: 100%; }
+  .xRow { flex-wrap: wrap; }
+  .xRow .primary { width: 100%; }
+  .foot { flex-direction: column; }
+}
