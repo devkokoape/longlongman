@@ -10,8 +10,7 @@ window.LLM = {
   intro:
     "Not another dog. Not fake AI. Cult lore from Japan’s Long Long Man, stretched across Arc.",
 
-  // Paste the live contract when you have it.
-  ca: "",
+  ca: "0x5F450CDD46fe82eA65Aa4944f1Da0D6b9B3A22d4",
 
   // If empty and ca is set, buy links to DYOR on Arc automatically.
   buyUrl: "",
