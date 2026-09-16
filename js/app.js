@@ -20,6 +20,7 @@
   $$("[data-buy-tax]").forEach((el) => (el.textContent = cfg.buyTax || "1%"));
   $$("[data-sell-tax]").forEach((el) => (el.textContent = cfg.sellTax || "3%"));
   $$("[data-lp]").forEach((el) => (el.textContent = cfg.lp || "—"));
+  $$("[data-ca]").forEach((el) => (el.textContent = cfg.ca || ""));
 
   const buyButtons = $$("[data-buy]");
   buyButtons.forEach((btn) => {

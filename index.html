@@ -29,7 +29,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css?v=6" />
+    <link rel="stylesheet" href="./css/style.css?v=7" />
   </head>
   <body>
     <main>
@@ -200,13 +200,79 @@
         </div>
       </section>
 
-      <footer class="footer shell">
-        <div class="footerBrand">
-          <img src="./assets/icon.png" alt="" />
-          <span>LONG LONG MAN</span>
+      <section class="faq shell" id="faq" aria-labelledby="faq-title">
+        <div class="sectionHeading">
+          <div>
+            <p class="sectionKicker">FAQ</p>
+            <h2 id="faq-title">Ask the man.</h2>
+          </div>
+          <p>Six short answers. No whitepaper. No twelve-month roadmap. Just the stretch.</p>
         </div>
-        <p>Hold $LLM. Make it long, long together.</p>
-        <a class="hidden" data-x href="#" target="_blank" rel="noreferrer">Follow on X</a>
+        <div class="faqList">
+          <details class="faqItem" open>
+            <summary>What is $LLM?</summary>
+            <p>
+              Long Long Man on Arc. A community memecoin inspired by Japan’s Long Long Man commercials — not another dog, not a fake AI wrapper. Hold $LLM. Long, long your future.
+            </p>
+          </details>
+          <details class="faqItem">
+            <summary>Is this an AI token?</summary>
+            <p>
+              No. $LLM hijacked tech’s most overused acronym and spent it on saxophone, soap-opera lore, and one endless stretch. The letters are the joke. The bag is the point.
+            </p>
+          </details>
+          <details class="faqItem">
+            <summary>What chain is $LLM on?</summary>
+            <p>
+              Arc. USDC gas, fast finality, native deployment. Paste the CA on Arc — nowhere else.
+            </p>
+          </details>
+          <details class="faqItem">
+            <summary>What is the contract address?</summary>
+            <p>
+              <span class="faqCa" data-ca>0x5F450CDD46fe82eA65Aa4944f1Da0D6b9B3A22d4</span>
+              Copy it from the hero, then check you’re on Arc before you buy.
+            </p>
+          </details>
+          <details class="faqItem">
+            <summary>What are the taxes?</summary>
+            <p>
+              1% buy. 3% sell. Every trade feeds the LP, so the floor gets longer instead of thinner.
+            </p>
+          </details>
+          <details class="faqItem">
+            <summary>How do I buy $LLM?</summary>
+            <p>
+              Add the Arc network, fund with USDC, paste the CA, then hold. Full steps are in How to buy above. After that: make it long, long together.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <footer class="siteFooter">
+        <div class="shell footerInner">
+          <div class="footerTop">
+            <div class="footerBrandBlock">
+              <a class="footerBrand" href="#top">
+                <img src="./assets/icon.png" alt="" />
+                <span>LONG LONG MAN</span>
+              </a>
+              <p>Hold $LLM. Make it long, long together.</p>
+            </div>
+            <nav class="footerNav" aria-label="Footer">
+              <a href="#thesis">Thesis</a>
+              <a href="#lore">Lore</a>
+              <a href="#buy">Buy</a>
+              <a href="#faq">FAQ</a>
+              <a data-x href="https://x.com/LLMonARC" target="_blank" rel="noopener noreferrer">X</a>
+            </nav>
+          </div>
+          <div class="footerBottom">
+            <p class="footerCa">CA <span data-ca>0x5F450CDD46fe82eA65Aa4944f1Da0D6b9B3A22d4</span></p>
+            <p class="footerFine">Community memecoin. Not financial advice. Charts can snap. Stretch anyway.</p>
+            <p class="footerCopy">© 2026 Long Long Man · Built on Arc</p>
+          </div>
+        </div>
       </footer>
     </main>
     <script src="./js/config.js"></script>
