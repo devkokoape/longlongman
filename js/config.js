@@ -5,23 +5,24 @@
 
 window.LLM = {
   name: "Long Long Man",
-  ticker: "LONGLONG",
-  tagline: "Go long. Stay long.",
+  ticker: "LLM",
+  tagline: "Holding $LLM will long, long your future.",
   intro:
-    "He landed on Arc in a tuxedo and never took profits. Community token. Infinite range. Zero chill.",
+    "Not another dog. Not fake AI. Cult lore from Japan’s Long Long Man, stretched across Arc.",
 
   // Paste the live contract when you have it.
   ca: "",
 
   // If empty and ca is set, buy links to DYOR on Arc automatically.
   buyUrl: "",
-  buyLabel: "Buy $LONGLONG",
+  buyLabel: "Buy $LLM",
 
-  xUrl: "",
+  xUrl: "https://x.com/LLMonARC",
   telegramUrl: "",
 
   chainLabel: "Arc",
   supply: "1,000,000,000",
-  tax: "0/0",
-  lp: "Burned",
+  buyTax: "1%",
+  sellTax: "3%",
+  lp: "Tax → LP",
 };

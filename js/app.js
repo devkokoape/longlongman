@@ -3,7 +3,7 @@
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => document.querySelectorAll(sel);
 
-  const ticker = (cfg.ticker || "LONGLONG").replace(/^\$/, "");
+  const ticker = (cfg.ticker || "LLM").replace(/^\$/, "");
   const buyUrl =
     cfg.buyUrl ||
     (cfg.ca
@@ -17,7 +17,8 @@
   $$("[data-intro]").forEach((el) => (el.textContent = cfg.intro || ""));
   $$("[data-chain]").forEach((el) => (el.textContent = cfg.chainLabel || "Arc"));
   $$("[data-supply]").forEach((el) => (el.textContent = cfg.supply || "—"));
-  $$("[data-tax]").forEach((el) => (el.textContent = cfg.tax || "—"));
+  $$("[data-buy-tax]").forEach((el) => (el.textContent = cfg.buyTax || "1%"));
+  $$("[data-sell-tax]").forEach((el) => (el.textContent = cfg.sellTax || "3%"));
   $$("[data-lp]").forEach((el) => (el.textContent = cfg.lp || "—"));
 
   const buyButtons = $$("[data-buy]");
@@ -39,6 +40,8 @@
   xLinks.forEach((a) => {
     if (cfg.xUrl) {
       a.href = cfg.xUrl;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
       a.classList.remove("hidden");
     } else {
       a.classList.add("hidden");
